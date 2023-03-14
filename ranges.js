@@ -6,7 +6,7 @@ const today = dayjs()
 
 const makeBody = () => {
 	const body = []
-	const start = firstApodDate.add(1, "year")
+	const start = firstApodDate.add(1, "year").startOf("year")
 	const end = today.subtract(1, "year").endOf("year")
 
 	let year = dayjs(start)

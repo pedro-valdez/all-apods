@@ -7,7 +7,7 @@ async function main() {
 	const apods = years.map(year => year.apods).flat()
 
 	apods.forEach(apod => {
-		fs.writeFileSync(`apods/${apod.date}`, JSON.stringify(apod))
+		fs.writeFileSync(`apods/${apod.date}.json`, JSON.stringify(apod))
 	})
 }
 

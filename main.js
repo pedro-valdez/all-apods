@@ -3,9 +3,12 @@ import fs from "fs"
 
 
 async function main() {
-	const allApods = await getAllApods()
+	const years = await getAllApods()
+	const apods = years.map(year => year.apods).flat()
 
-	fs.writeFileSync("apods.json", JSON.stringify(allApods))
+	apods.forEach(apod => {
+		fs.writeFileSync(`apods/${apod.date}`, JSON.stringify(apod))
+	})
 }
 
 main()
